@@ -2,9 +2,9 @@
 import createError from 'axios/lib/core/createError.js';
 import httpAdapter from 'axios/lib/adapters/http.js';
 import { MAX_REQUEST_TIME } from './Constants.js';
-import pkg from 'lodash';
+import lodash from 'lodash';
 
-const { get, includes } = pkg;
+const { get, includes } = lodash;
 
 var reqArray = [];
 var reqPromise;
@@ -26,19 +26,12 @@ const resolveBatchResult = (results, config) => {
     }
 };
 
-// const getBatchconfig = (config) => ({
-//     ...config,
-//     params: {
-//         ...config.params,
-//         ids: reqArray.reduce((acc, cv) => [...new Set([...acc, get(cv, 'params.id', [])])]),
-//     },
-// });
-
 const getBatchconfig = (config) => {
-    const batchedIds = reqArray.reduce((accumulator, currentValue) => {
-        const ids = get(currentValue, 'params.ids', []);
-        return [...new Set([...accumulator, ...ids])];
+    const batchedIds = reqArray.reduce((acc, cv) => {
+        const ids = get(cv, 'params.ids', []);
+        return [...new Set([...acc, ...ids])];
     }, []);
+
     return { ...config, params: { ...config.params, ids: batchedIds } };
 };
 
