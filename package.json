@@ -1,0 +1,30 @@
+{
+  "name": "com.batch-interceptor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsiuli001/batch-interceptor.git"
+  },
+  "keywords": [
+    "axios",
+    "batch",
+    "interceptor"
+  ],
+  "author": "Ram Chandra Siuli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rsiuli001/batch-interceptor/issues"
+  },
+  "homepage": "https://github.com/rsiuli001/batch-interceptor#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "lodash": "^4.17.21"
+  }
+}
