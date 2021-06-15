@@ -10,6 +10,4 @@ install packages with npm.
 
 execute index.js
 
-### `cd src`
-
-### `node index.js`
+### `node .` or `node index.js`
